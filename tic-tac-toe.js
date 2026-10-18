@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const board = document.getElementById("board");
     const squares = board.getElementsByTagName("div");
     const status = document.getElementById("status");
+    const newGame = document.querySelector(".btn");
 
     let currentPlayer = "X";
 
@@ -55,4 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+
+    newGame.addEventListener("click", function () {
+        for (let i = 0; i < squares.length; i++) {
+            squares[i].textContent = "";
+            squares[i].classList.remove("X");
+            squares[i].classList.remove("O");
+        }
+
+        status.textContent = "Move your mouse over a square and click to play an X or an O.";
+        status.classList.remove("you-won");
+
+        currentPlayer = "X";
+    });
 });
