@@ -17,5 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPlayer = "X";
             }
         });
+
+        squares[i].addEventListener("mouseover", function () {
+            this.classList.add("hover");
+        });
+
+        squares[i].addEventListener("mouseout", function () {
+            this.classList.remove("hover");
+        });
     }
 });
